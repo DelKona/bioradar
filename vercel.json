@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "public/**", "use": "@vercel/static" },
+    { "src": "api/**/*.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/$1" },
+    { "src": "/(.*)", "dest": "/public/$1" }
+  ],
+  "env": {
+    "ANTHROPIC_API_KEY": "@anthropic-api-key",
+    "OPENALEX_KEY": "@openalex-key",
+    "CORE_API_KEY": "@core-api-key",
+    "SPRINGER_API_KEY": "@springer-api-key"
+  }
+}
